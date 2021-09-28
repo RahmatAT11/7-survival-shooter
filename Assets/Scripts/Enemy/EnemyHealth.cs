@@ -80,6 +80,8 @@ public class EnemyHealth : MonoBehaviour
         // mainkan suara dead
         enemyAudio.clip = deathClip;
         enemyAudio.Play ();
+
+        ScoreManager.score += scoreValue;
     }
 
 

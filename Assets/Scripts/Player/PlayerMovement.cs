@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // mendapatkan nilai input horizontal (-1, 0, 1)
+        /*// mendapatkan nilai input horizontal (-1, 0, 1)
         float horizontalAxis = Input.GetAxisRaw("Horizontal");
         
         // mendapatkan nilai input vertikal (-1, 0, 1)
@@ -31,16 +31,16 @@ public class PlayerMovement : MonoBehaviour
         
         // panggil method move untuk menggerakkan karakter
         Move(horizontalAxis, verticalAxis);
+
+        // panggil method animating untuk melakukan animasi karakter
+        Animating(horizontalAxis, verticalAxis);*/
         
         // panggil method turning untuk membuat karakter bisa menghadap ke arah cursor mouse
         Turning();
-        
-        // panggil method animating untuk melakukan animasi karakter
-        Animating(horizontalAxis, verticalAxis);
     }
 
     // method yang membuat karakter melakukan animasi
-    private void Animating(float horizontalAxis, float verticalAxis)
+    public void Animating(float horizontalAxis, float verticalAxis)
     {
         bool walking = horizontalAxis != 0f || verticalAxis != 0f;
         anim.SetBool("IsWalking", walking);
@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // method yang membuat karakter bergerak
-    private void Move(float horizontalAxis, float verticalAxis)
+    public void Move(float horizontalAxis, float verticalAxis)
     {
         // set nilai x dan y
         movement.Set(horizontalAxis, 0f, verticalAxis);
@@ -82,6 +82,4 @@ public class PlayerMovement : MonoBehaviour
         // bergerak ke posisi tujuan
         playerRigidbody.MovePosition(transform.position + movement);
     }
-    
-    
 }

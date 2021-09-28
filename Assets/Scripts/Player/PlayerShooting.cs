@@ -6,7 +6,7 @@ public class PlayerShooting : MonoBehaviour
     public float timeBetweenBullets = 0.15f;        
     public float range = 100f;                      
 
-    float timer;                                    
+    public float timer;                                    
     Ray shootRay;                                   
     RaycastHit shootHit;                            
     int shootableMask;                             
@@ -32,10 +32,10 @@ public class PlayerShooting : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (Input.GetButton("Fire1") && timer >= timeBetweenBullets)
+        /*if (Input.GetButton("Fire1") && timer >= timeBetweenBullets)
         {
             Shoot();
-        }
+        }*/
 
         if (timer >= timeBetweenBullets * effectsDisplayTime)
         {
@@ -52,7 +52,7 @@ public class PlayerShooting : MonoBehaviour
         gunLight.enabled = false;
     }
 
-    void Shoot()
+    public void Shoot()
     {
         timer = 0f;
 

@@ -51,7 +51,6 @@ public class EnemyHealth : MonoBehaviour
 
         // kurangi health enemy
         currentHealth -= amount;
-        Debug.Log(currentHealth);
 
         // ganti posisi particle
         hitParticles.transform.position = hitPoint;
